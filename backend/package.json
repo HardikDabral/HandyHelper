@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-   "build": "next build"
+    "build": "npm install && npm run start"
   },
   "dependencies": {
     "cors": "^2.8.5",
