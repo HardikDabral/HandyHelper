@@ -1,11 +1,15 @@
 {
+  "type": "module",
   "name": "tools-backend",
   "version": "1.0.0",
   "main": "src/index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "build": "npm run start"
+    "build": "next build"
   },
   "dependencies": {
     "cors": "^2.8.5",

@@ -1,27 +1,30 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import connectDB from './config/db.js';
-import userRoutes from './routes/userRoutes.js';
-import cors from 'cors';
+import express from 'express'
+import dotenv from 'dotenv'
+import connectDB from './config/db.js'
+import userRoutes from './routes/userRoutes.js'
+import cors from 'cors'
 
-dotenv.config();
-connectDB();
+dotenv.config()
+connectDB()
 
-const app = express();
-app.use(express.json());
+const app = express()
 
-// Updated CORS configuration
+// Configure CORS for Vercel
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-  exposedHeaders: ['Content-Type', 'Authorization']
-}));
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}))
 
-app.use('/api/users', userRoutes);
+app.use(express.json())
 
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Basic route for Vercel health check
+app.get('/', (req, res) => {
+  res.json({ message: 'API is running' })
+})
+
+app.use('/api/users', userRoutes)
+
+const PORT = process.env.PORT || 5001
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
