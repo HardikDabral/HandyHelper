@@ -39,9 +39,9 @@ export function AuthProvider({ children }) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
         },
-        credentials: 'include',
+        mode: 'cors',
+        credentials: 'same-origin',
         body: JSON.stringify({ name, email, password }),
       })
       const data = await response.json()
