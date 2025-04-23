@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { useAuth } from '../../../context/AuthContext'
+import { useAuth } from '../../context/AuthContext'  // Updated import path
 import { useRouter } from 'next/navigation'
 import { LogIn, UserPlus } from 'lucide-react'
 
@@ -10,19 +10,34 @@ export default function AuthPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [successMessage, setSuccessMessage] = useState('')
   const { login, signup } = useAuth()
   const router = useRouter()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const result = isLogin 
-      ? await login(email, password)
-      : await signup(name, email, password)
+    setIsLoading(true)
+    setError('')
+    setSuccessMessage('')
 
-    if (result.success) {
-      router.push('/')
-    } else {
-      setError(result.error)
+    try {
+      const result = isLogin 
+        ? await login(email, password)
+        : await signup(name, email, password)
+
+      if (result.success) {
+        setSuccessMessage(isLogin ? 'Login successful!' : 'Account created successfully!')
+        setTimeout(() => {
+          router.push('/')
+        }, 1500)
+      } else {
+        setError(result.error)
+      }
+    } catch (err) {
+      setError('An error occurred. Please try again.')
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -58,6 +73,12 @@ export default function AuthPage() {
           {error && (
             <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
               {error}
+            </div>
+          )}
+
+          {successMessage && (
+            <div className="mb-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded">
+              {successMessage}
             </div>
           )}
 
@@ -105,9 +126,17 @@ export default function AuthPage() {
 
             <button
               type="submit"
-              className="w-full bg-[#0B2E33] text-white py-3 rounded-lg hover:bg-[#4F7C82] transition-all duration-300"
+              disabled={isLoading}
+              className="w-full bg-[#0B2E33] text-white py-3 rounded-lg hover:bg-[#4F7C82] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLogin ? 'Login' : 'Sign Up'}
+              {isLoading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  {isLogin ? 'Logging in...' : 'Signing up...'}
+                </span>
+              ) : (
+                isLogin ? 'Login' : 'Sign Up'
+              )}
             </button>
           </form>
         </div>

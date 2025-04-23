@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { Calendar, Calculator, Timer, TimerOff, ClipboardList, Clock, Search, DollarSign, RefreshCcw, Wallet, Split, Scale, Droplets, Moon, FileText, Percent, Binary, Braces, GraduationCap, Palette, Image, Wifi, QrCode, Shuffle, Dices, ImagePlus, Languages } from 'lucide-react'
+import { Calendar, Calculator, Timer, TimerOff, ClipboardList, Clock, Search, DollarSign, RefreshCcw, Wallet, Split, Scale, Droplets, Moon, FileText, Percent, Binary, Braces, GraduationCap, Palette, Image, Wifi, QrCode, Shuffle, Dices, ImagePlus, Languages, Receipt } from 'lucide-react'
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -53,6 +53,13 @@ export default function Home() {
       name: 'EMI Calculator',
       description: 'Calculate loan EMIs (Home, Car, Personal).',
       icon: DollarSign,
+      category: 'Finance'
+    },
+    {
+      id: 'gst-calculator',
+      name: 'GST Calculator',
+      description: 'Calculate GST amounts and total price with different tax rates.',
+      icon: Receipt,
       category: 'Finance'
     },
     {
@@ -217,7 +224,7 @@ export default function Home() {
       description: 'Quick and easy translations between multiple languages.',
       icon: Languages,
       category: 'Education & Learning'
-    }
+    },
 ]
   const filteredTools = tools.filter(tool => 
     tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Wrench, LogIn, LogOut, User } from 'lucide-react'
-import { useAuth } from '../../../context/AuthContext'
+import { useAuth } from '../../context/AuthContext'
 import { useRouter } from 'next/navigation'
 
 export default function Navbar() {

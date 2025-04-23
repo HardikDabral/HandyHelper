@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Calculator, Calendar, Timer, TimerOff, ClipboardList, Clock, DollarSign, RefreshCcw, Wallet, Split, Scale, Droplets, Moon, GraduationCap, FileText, Percent, Binary, Braces, Palette, Image, Wifi, QrCode, Shuffle, Dices, ImagePlus, Languages } from 'lucide-react'
+import { Calculator, Calendar, Timer, TimerOff, ClipboardList, Clock, DollarSign, RefreshCcw, Wallet, Split, Scale, Droplets, Moon, GraduationCap, FileText, Percent, Binary, Braces, Palette, Image, Wifi, QrCode, Shuffle, Dices, ImagePlus, Languages, Receipt } from 'lucide-react'
 
 export default function Sidebar() {
   const categories = {
@@ -15,6 +15,7 @@ export default function Sidebar() {
     ],
     'Finance': [
       { id: 'emi-calculator', name: 'EMI Calculator', icon: DollarSign },
+      { id: 'gst-calculator', name: 'GST Calculator', icon: Receipt }, // Add this line
       { id: 'interest-calculator', name: 'Interest Calculator', icon: RefreshCcw },
       { id: 'salary-calculator', name: 'Salary Calculator', icon: Wallet },
       { id: 'expense-splitter', name: 'Expense Splitter', icon: Split },
