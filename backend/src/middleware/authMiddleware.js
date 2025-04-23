@@ -2,6 +2,16 @@ import jwt from 'jsonwebtoken';
 import User from '../models/userModel.js';
 
 const protect = async (req, res, next) => {
+  // Add CORS headers
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   let token;
 
   if (
