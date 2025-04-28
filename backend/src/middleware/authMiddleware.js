@@ -2,36 +2,35 @@ import jwt from 'jsonwebtoken';
 import User from '../models/userModel.js';
 
 const protect = async (req, res, next) => {
-  // Add CORS headers
-  res.header('Access-Control-Allow-Origin', ['*', 'http://localhost:3000']);
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  
   // Handle preflight requests
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    return res.status(200).json({ message: 'OK' });
   }
 
-  let token;
+  try {
+    let token;
 
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith('Bearer')
-  ) {
-    try {
-      token = req.headers.authorization.split(' ')[1];
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = await User.findById(decoded.id).select('-password');
-      next();
-    } catch (error) {
-      res.status(401);
-      throw new Error('Not authorized, token failed');
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith('Bearer')
+    ) {
+      try {
+        token = req.headers.authorization.split(' ')[1];
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = await User.findById(decoded.id).select('-password');
+        return next();
+      } catch (error) {
+        return res.status(401).json({ message: 'Not authorized, token failed' });
+      }
     }
-  }
 
-  if (!token) {
-    res.status(401);
-    throw new Error('Not authorized, no token');
+    if (!token) {
+      return res.status(401).json({ message: 'Not authorized, no token' });
+    }
+  } catch (error) {
+    return res.status(500).json({ message: 'Server error' });
   }
 };
 

@@ -1,12 +1,21 @@
 'use client'
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
 
 const AuthContext = createContext()
 
-const API_URL = 'https://handy-helper.vercel.app/api/users'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api/users';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user')
+    if (storedUser) {
+      setUser(JSON.parse(storedUser))
+    }
+    setLoading(false)
+  }, [])
 
   const login = async (email, password) => {
     try {
@@ -14,22 +23,25 @@ export function AuthProvider({ children }) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
         },
-        credentials: 'include',
         body: JSON.stringify({ email, password }),
       })
-      const data = await response.json()
-      
-      if (response.ok) {
-        setUser(data)
-        localStorage.setItem('user', JSON.stringify(data))
-        return { success: true }
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.message || 'Login failed')
       }
-      return { success: false, error: data.message }
+
+      const data = await response.json()
+      setUser(data)
+      localStorage.setItem('user', JSON.stringify(data))
+      return { success: true }
     } catch (error) {
       console.error('Login error:', error)
-      return { success: false, error: 'Login failed. Please try again.' }
+      return { 
+        success: false, 
+        error: error.message || 'Login failed. Please try again.' 
+      }
     }
   }
 
@@ -40,21 +52,24 @@ export function AuthProvider({ children }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'cors',
-        credentials: 'same-origin',
         body: JSON.stringify({ name, email, password }),
       })
-      const data = await response.json()
-      
-      if (response.ok) {
-        setUser(data)
-        localStorage.setItem('user', JSON.stringify(data))
-        return { success: true }
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.message || 'Registration failed')
       }
-      return { success: false, error: data.message }
+
+      const data = await response.json()
+      setUser(data)
+      localStorage.setItem('user', JSON.stringify(data))
+      return { success: true }
     } catch (error) {
       console.error('Signup error:', error)
-      return { success: false, error: 'Registration failed. Please try again.' }
+      return { 
+        success: false, 
+        error: error.message || 'Registration failed. Please try again.' 
+      }
     }
   }
 
@@ -63,15 +78,12 @@ export function AuthProvider({ children }) {
     localStorage.removeItem('user')
   }
 
-  const value = {
-    user,
-    login,
-    signup,
-    logout
+  if (loading) {
+    return null
   }
 
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ user, login, signup, logout }}>
       {children}
     </AuthContext.Provider>
   )
