@@ -39,8 +39,8 @@ export default function DayCounter() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] flex justify-center items-start sm:items-center p-4">
-      <div className="max-w-2xl w-full mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] flex justify-center">
+      <div className="max-w-2xl w-full mx-4 sm:mx-auto p-6 pt-16">
         <div className="flex items-center mb-6 sm:mb-8">
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-3 sm:mr-4 animate-bounce">
             <Calculator className="w-5 h-5 sm:w-6 sm:h-6" />
