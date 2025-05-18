@@ -70,8 +70,8 @@ export default function AgeCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] flex justify-center items-center p-4">
-      <div className="max-w-2xl w-full mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] flex justify-center">
+      <div className="max-w-2xl w-full mx-4 sm:mx-auto p-6 pt-16">
         <div className="flex items-center mb-8">
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-4 animate-bounce">
             <Calculator className="w-6 h-6" />
@@ -90,11 +90,12 @@ export default function AgeCalculator() {
                 type="date"
                 value={birthDate}
                 max={today}
+                placeholder="DD/MM/YYYY"
                 onChange={(e) => {
                   setBirthDate(e.target.value)
                   setError('')
                 }}
-                className="w-full p-3 border border-[#93B1B5]/50 rounded-lg bg-white/80 text-[#0B2E33] focus:outline-none focus:border-[#4F7C82] focus:ring-2 focus:ring-[#4F7C82]/30"
+                className="w-full p-3 border border-[#93B1B5]/50 rounded-lg bg-white/80 text-[#0B2E33] focus:outline-none focus:border-[#4F7C82] focus:ring-2 focus:ring-[#4F7C82]/30 placeholder:text-[#0B2E33]/50"
               />
             </div>
             {error && <p className="mt-2 text-sm text-red-600 flex items-center"><Frown className="w-4 h-4 mr-1" /> {error}</p>}
