@@ -145,8 +145,6 @@ export default function GSTCalculator() {
         </div>
 
         <div className="mt-8 space-y-6">
-
-
           <div className="bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
             <h2 className="text-lg font-semibold text-[#0B2E33] mb-4">GST Calculation Formulas</h2>
             <div className="space-y-4">

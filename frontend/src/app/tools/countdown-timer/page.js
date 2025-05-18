@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Clock, Play, Pause, RotateCw } from 'lucide-react'
+import { Clock, Play, Pause, RotateCw, Info } from 'lucide-react'
 
 export default function CountdownTimer() {
   const [hours, setHours] = useState(0)
@@ -16,8 +16,12 @@ export default function CountdownTimer() {
         setTimeLeft(prev => prev - 1)
       }, 1000)
     } else if (timeLeft === 0 && isRunning) {
-      const notification = new Audio('/notification.mp3')
-      notification.play()
+      try {
+        const audio = new Audio('/notification.mp3')
+        audio.play()
+      } catch (error) {
+        console.error('Error playing sound:', error)
+      }
       setIsRunning(false)
     }
     return () => clearInterval(interval)
@@ -55,7 +59,7 @@ export default function CountdownTimer() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] flex justify-center">
-  <div className="max-w-2xl w-full mx-4 sm:mx-auto p-6 pt-16">
+      <div className="max-w-2xl w-full mx-4 sm:mx-auto p-6 pt-16">
         <div className="flex items-center mb-8">
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-4 animate-bounce">
             <Clock className="w-6 h-6" />
@@ -74,7 +78,11 @@ export default function CountdownTimer() {
                     min="0"
                     max={max}
                     value={value}
-                    onChange={(e) => setter(parseInt(e.target.value) || 0)}
+                    onFocus={(e) => e.target.select()}
+                    onChange={(e) => {
+                      const val = e.target.value === '' ? 0 : Math.min(parseInt(e.target.value) || 0, max)
+                      setter(val)
+                    }}
                     className="w-full p-3 border border-[#93B1B5]/40 rounded-lg bg-white/50 backdrop-blur-xl text-[#0B2E33] focus:outline-none focus:border-[#4F7C82] focus:ring-2 focus:ring-[#4F7C82]/20"
                   />
                 </div>
@@ -101,6 +109,56 @@ export default function CountdownTimer() {
             <button onClick={resetTimer} className="flex-1 bg-gray-500 text-white py-3 rounded-lg hover:bg-gray-600 transition-all duration-300 flex items-center justify-center gap-2">
               <RotateCw className="w-4 h-4" /> Reset
             </button>
+          </div>
+        </div>
+
+        {/* How to Use Section */}
+        <div className="mt-8 space-y-6">
+          <div className="bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
+            <h2 className="text-lg font-semibold text-[#0B2E33] mb-4 flex items-center">
+              <Info className="w-5 h-5 mr-2" />
+              How to Use This Timer
+            </h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-medium text-[#0B2E33] mb-2">Setting the Timer</h3>
+                <div className="bg-[#B8E3E9]/20 p-3 rounded-lg">
+                  <p className="text-[#0B2E33]/80">1. Enter hours (0-23), minutes (0-59), and seconds (0-59)</p>
+                  <p className="text-[#0B2E33]/80">2. Click "Start" to begin the countdown</p>
+                </div>
+              </div>
+              <div>
+                <h3 className="font-medium text-[#0B2E33] mb-2">Timer Controls</h3>
+                <div className="bg-[#B8E3E9]/20 p-3 rounded-lg">
+                  <p className="text-[#0B2E33]/80">• Pause: Temporarily stops the timer</p>
+                  <p className="text-[#0B2E33]/80">• Reset: Clears all values and stops the timer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
+            <h2 className="text-lg font-semibold text-[#0B2E33] mb-4">Important Notes</h2>
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <span className="text-[#0B2E33]">•</span>
+                </div>
+                <p className="ml-2 text-[#0B2E33]/80">The timer will play a sound notification when it reaches zero</p>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <span className="text-[#0B2E33]">•</span>
+                </div>
+                <p className="ml-2 text-[#0B2E33]/80">Maximum time limit is 23 hours, 59 minutes, and 59 seconds</p>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <span className="text-[#0B2E33]">•</span>
+                </div>
+                <p className="ml-2 text-[#0B2E33]/80">The countdown continues even if you leave the page (unless you refresh)</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
