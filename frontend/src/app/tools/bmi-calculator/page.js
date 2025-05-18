@@ -19,15 +19,15 @@ export default function BMICalculator() {
       bmi = (weight / Math.pow(height, 2)) * 703
     }
 
-    const category = 
+    const category =
       bmi < 18.5 ? 'Underweight' :
-      bmi < 25 ? 'Normal weight' :
-      bmi < 30 ? 'Overweight' :
-      'Obese'
+        bmi < 25 ? 'Normal weight' :
+          bmi < 30 ? 'Overweight' :
+            'Obese'
 
     const healthyWeightRange = {
-      min: (18.5 * Math.pow(unit === 'metric' ? height / 100 : height, 2) * (unit === 'imperial' ? 1/703 : 1)).toFixed(1),
-      max: (24.9 * Math.pow(unit === 'metric' ? height / 100 : height, 2) * (unit === 'imperial' ? 1/703 : 1)).toFixed(1)
+      min: (18.5 * Math.pow(unit === 'metric' ? height / 100 : height, 2) * (unit === 'imperial' ? 1 / 703 : 1)).toFixed(1),
+      max: (24.9 * Math.pow(unit === 'metric' ? height / 100 : height, 2) * (unit === 'imperial' ? 1 / 703 : 1)).toFixed(1)
     }
 
     return {
@@ -40,8 +40,8 @@ export default function BMICalculator() {
   const result = calculateBMI()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] md:pl-64">
-      <div className="max-w-2xl mx-auto p-6 pt-16 lg:ml-[-20px]">
+    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] flex justify-center">
+      <div className="max-w-2xl w-full mx-4 sm:mx-auto p-6 pt-16">
         <div className="flex items-center mb-8">
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-4 animate-bounce">
             <Scale className="w-6 h-6" />
@@ -58,21 +58,19 @@ export default function BMICalculator() {
             <div className="flex gap-4">
               <button
                 onClick={() => setUnit('metric')}
-                className={`flex-1 p-3 rounded-lg text-center transition-all ${
-                  unit === 'metric'
+                className={`flex-1 p-3 rounded-lg text-center transition-all ${unit === 'metric'
                     ? 'bg-[#0B2E33] text-white'
                     : 'bg-white/50 text-[#0B2E33] hover:bg-[#0B2E33] hover:text-white'
-                }`}
+                  }`}
               >
                 Metric
               </button>
               <button
                 onClick={() => setUnit('imperial')}
-                className={`flex-1 p-3 rounded-lg text-center transition-all ${
-                  unit === 'imperial'
+                className={`flex-1 p-3 rounded-lg text-center transition-all ${unit === 'imperial'
                     ? 'bg-[#0B2E33] text-white'
                     : 'bg-white/50 text-[#0B2E33] hover:bg-[#0B2E33] hover:text-white'
-                }`}
+                  }`}
               >
                 Imperial
               </button>

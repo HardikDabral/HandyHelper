@@ -22,7 +22,7 @@ export default function ColorPicker() {
   const handleRgbChange = (key, value) => {
     const newRgb = { ...rgb, [key]: value }
     setRgb(newRgb)
-    const hex = '#' + 
+    const hex = '#' +
       (newRgb.r | 1 << 8).toString(16).slice(1) +
       (newRgb.g | 1 << 8).toString(16).slice(1) +
       (newRgb.b | 1 << 8).toString(16).slice(1)
@@ -40,13 +40,13 @@ export default function ColorPicker() {
   }
 
   const generateRandomColor = () => {
-    const hex = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')
+    const hex = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')
     setColor(hex)
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] md:pl-64">
-      <div className="max-w-2xl mx-auto p-6 pt-16 lg:ml-[-20px]">
+    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] flex justify-center">
+      <div className="max-w-2xl w-full mx-4 sm:mx-auto p-6 pt-16">
         <div className="flex items-center mb-8">
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-4 animate-bounce">
             <Palette className="w-6 h-6" />
@@ -61,7 +61,7 @@ export default function ColorPicker() {
           <div className="space-y-6">
             {/* Color Preview */}
             <div className="flex flex-col items-center gap-4">
-              <div 
+              <div
                 className="w-32 h-32 rounded-lg shadow-inner border border-[#93B1B5]/40"
                 style={{ backgroundColor: color }}
               />

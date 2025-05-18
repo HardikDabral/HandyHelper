@@ -9,8 +9,7 @@ export default function WordCounter() {
     charactersNoSpace: 0,
     words: 0,
     sentences: 0,
-    paragraphs: 0,
-    readingTime: 0
+    paragraphs: 0
   })
 
   useEffect(() => {
@@ -20,15 +19,13 @@ export default function WordCounter() {
       const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length
       const sentences = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(Boolean).length
       const paragraphs = text.trim() === '' ? 0 : text.split(/\n\s*\n/).filter(Boolean).length
-      const readingTime = Math.ceil(words / 200) // Average reading speed: 200 words per minute
 
       setStats({
         characters,
         charactersNoSpace,
         words,
         sentences,
-        paragraphs,
-        readingTime
+        paragraphs
       })
     }
 
@@ -36,8 +33,8 @@ export default function WordCounter() {
   }, [text])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] md:pl-64">
-      <div className="max-w-4xl mx-auto p-6 pt-16 lg:ml-[-20px]">
+    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] flex justify-center">
+      <div className="max-w-2xl w-full mx-4 sm:mx-auto p-6 pt-16">
         <div className="flex items-center mb-8">
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-4 animate-bounce">
             <FileText className="w-6 h-6" />
@@ -48,19 +45,16 @@ export default function WordCounter() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="md:col-span-2">
-            <div className="bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
-              <textarea
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                placeholder="Type or paste your text here..."
-                className="w-full h-96 p-4 border border-[#93B1B5]/40 rounded-lg bg-white/50 text-[#0B2E33] focus:outline-none focus:border-[#4F7C82] focus:ring-2 focus:ring-[#4F7C82]/20 resize-none"
-              />
-            </div>
-          </div>
+        <div className="bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40 mb-6">
+          <textarea
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Type or paste your text here..."
+            className="w-full h-96 p-4 border border-[#93B1B5]/40 rounded-lg bg-white/50 text-[#0B2E33] focus:outline-none focus:border-[#4F7C82] focus:ring-2 focus:ring-[#4F7C82]/20 resize-none"
+          />
+        </div>
 
-          <div className="space-y-6">
+        <div className="space-y-6">
             <div className="bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
               <h2 className="text-lg font-semibold text-[#0B2E33] mb-4">Text Statistics</h2>
               <div className="space-y-4">
@@ -104,7 +98,7 @@ export default function WordCounter() {
                   <span className="font-semibold text-[#0B2E33]">{stats.paragraphs}</span>
                 </div>
 
-                <div className="flex items-center justify-between p-3 bg-[#B8E3E9]/20 rounded-lg">
+                {/* <div className="flex items-center justify-between p-3 bg-[#B8E3E9]/20 rounded-lg">
                   <div className="flex items-center gap-2 text-[#0B2E33]">
                     <Clock className="w-4 h-4" />
                     <span>Reading Time</span>
@@ -112,12 +106,11 @@ export default function WordCounter() {
                   <span className="font-semibold text-[#0B2E33]">
                     {stats.readingTime} {stats.readingTime === 1 ? 'minute' : 'minutes'}
                   </span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   )
 }

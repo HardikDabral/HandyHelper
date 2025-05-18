@@ -10,8 +10,8 @@ export default function ClientLayout({ children }) {
         <Navbar />
         <div className="flex pt-16">
           <Sidebar />
-          <div className="flex-1 md:ml-64"> {/* Removed padding */}
-            <div className="w-full"> {/* Full width on mobile */}
+          <div className="flex-1 md:ml-64"> 
+            <div className="w-full"> 
               {children}
             </div>
           </div>
