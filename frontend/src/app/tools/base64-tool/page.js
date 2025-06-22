@@ -80,7 +80,7 @@ export default function Base64Tool() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] flex justify-center">
-  <div className="max-w-2xl w-full mx-4 sm:mx-auto p-6 pt-16">
+      <div className="max-w-2xl w-full mx-4 sm:mx-auto p-6 pt-16">
         <div className="flex items-center mb-8">
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-4 animate-bounce">
             <Binary className="w-6 h-6" />
@@ -137,8 +137,8 @@ export default function Base64Tool() {
                 setInput(e.target.value)
                 setError(null)
               }}
-              placeholder={mode === 'encode' 
-                ? 'Enter text to encode (supports Unicode characters)...' 
+              placeholder={mode === 'encode'
+                ? 'Enter text to encode (supports Unicode characters)...'
                 : 'Enter Base64 string to decode...'}
               className="w-full h-48 p-4 font-mono text-sm border border-[#93B1B5]/40 rounded-lg bg-white/50 text-[#0B2E33] focus:outline-none focus:border-[#4F7C82] focus:ring-2 focus:ring-[#4F7C82]/20 resize-none"
             />
@@ -182,8 +182,8 @@ export default function Base64Tool() {
               <textarea
                 readOnly
                 value={output}
-                placeholder={mode === 'encode' 
-                  ? 'Base64 output will appear here...' 
+                placeholder={mode === 'encode'
+                  ? 'Base64 output will appear here...'
                   : 'Decoded text will appear here...'}
                 className="w-full h-48 p-4 font-mono text-sm border border-[#93B1B5]/40 rounded-lg bg-white/50 text-[#0B2E33] focus:outline-none focus:border-[#4F7C82] focus:ring-2 focus:ring-[#4F7C82]/20 resize-none"
               />
