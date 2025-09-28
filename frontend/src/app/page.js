@@ -258,7 +258,7 @@ export default function Home() {
         {filteredTools.map((tool) => (
           <Link
             key={tool.id}
-            href={`/tools/${tool.id}`}
+            href={`/${tool.id}`}
             className="group block bg-white/50 backdrop-blur-xl rounded-xl p-4 md:p-6 hover:bg-white/60 transition-all duration-300 border border-[#93B1B5]/40 hover:border-[#0B2E33]/40"
           >
             <div className="flex items-start space-x-3 md:space-x-4">
