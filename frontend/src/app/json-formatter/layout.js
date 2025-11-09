@@ -1,0 +1,10 @@
+export const metadata = {
+  title: 'JSON Formatter - Format & Validate JSON | Handy Helper',
+  description: 'Format, validate, and beautify JSON data online. Free JSON formatter with syntax highlighting and error detection.',
+  keywords: ['JSON formatter', 'JSON validator', 'JSON beautifier', 'format JSON', 'JSON tool', 'JSON parser', 'JSON editor', 'JSON viewer'],
+}
+
+export default function JSONLayout({ children }) {
+  return <>{children}</>
+}
+

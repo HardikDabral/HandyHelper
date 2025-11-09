@@ -31,6 +31,12 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3 md:gap-4 text-sm md:text-base">
             <Link
+              href="/landing-page"
+              className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors duration-300"
+            >
+              Home
+            </Link>
+            <Link
               href="/about"
               className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors duration-300"
             >
