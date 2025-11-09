@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import { Receipt, Sparkles } from 'lucide-react'
 
 export default function GSTCalculator() {
@@ -163,6 +164,25 @@ export default function GSTCalculator() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
+          <h2 className="text-xl font-bold text-[#0B2E33] mb-4">Related Finance Tools</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/discount-calculator" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Discount Calculator
+            </Link>
+            <Link href="/percentage-calculator" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Percentage Calculator
+            </Link>
+            <Link href="/tip-calculator" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Tip Calculator
+            </Link>
+            <Link href="/" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → View All Tools
+            </Link>
           </div>
         </div>
       </div>

@@ -296,24 +296,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Additional Internal Links Section */}
-        <div className="mt-12 bg-white/50 backdrop-blur-xl rounded-xl p-6 md:p-8 border border-[#93B1B5]/40">
-          <h2 className="text-2xl font-bold text-[#0B2E33] mb-4">Explore More</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Link href="/landing-page" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
-              → Landing Page
-            </Link>
-            <Link href="/about" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
-              → About Us
-            </Link>
-            <Link href="/bmi-calculator" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
-              → BMI Calculator
-            </Link>
-            <Link href="/emi-calculator" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
-              → EMI Calculator
-            </Link>
-          </div>
-        </div>
       </div>
     </>
   )

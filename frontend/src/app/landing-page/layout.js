@@ -1,23 +1,7 @@
 export const metadata = {
   title: 'Free Online Calculators & Tools - Handy Helper',
-  description: 'Discover powerful free calculators and tools: BMI calculator, EMI calculator, age calculator, percentage calculator, QR generator, language translator, and 30+ more utility tools. Fast, accurate, and completely free.',
-  keywords: [
-    'free online calculators',
-    'BMI calculator',
-    'EMI calculator',
-    'age calculator',
-    'percentage calculator',
-    'QR code generator',
-    'language translator',
-    'meme generator',
-    'countdown timer',
-    'utility tools',
-    'online tools',
-    'free calculators',
-    'handy helper tools',
-    'calculator tools',
-    'productivity tools'
-  ],
+  description: 'Discover powerful free calculators and tools: BMI calculator, EMI calculator, age calculator, percentage calculator, QR generator, language translator, and 30+ more utility tools. Fast, accurate, and completely free. Free online calculators, BMI calculator, EMI calculator, age calculator, percentage calculator, QR code generator, language translator, meme generator, countdown timer, utility tools, online tools, free calculators, handy helper tools, calculator tools, productivity tools.',
+  keywords: 'free online calculators, BMI calculator, EMI calculator, age calculator, percentage calculator, QR code generator, language translator, meme generator, countdown timer, utility tools, online tools, free calculators, handy helper tools, calculator tools, productivity tools',
   openGraph: {
     title: 'Free Online Calculators & Tools - Handy Helper',
     description: 'Discover powerful free calculators and tools: BMI calculator, EMI calculator, age calculator, and 30+ more utility tools.',

@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { ClipboardList, Plus, Check, ListFilter, CheckCircle2, Circle, Trash2 } from 'lucide-react'
 
 export default function TodoList() {
@@ -142,6 +143,25 @@ export default function TodoList() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
+          <h2 className="text-xl font-bold text-[#0B2E33] mb-4">Related Productivity Tools</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/pomodoro" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Pomodoro Timer
+            </Link>
+            <Link href="/stopwatch" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Stopwatch
+            </Link>
+            <Link href="/countdown-timer" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Countdown Timer
+            </Link>
+            <Link href="/" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → View All Tools
+            </Link>
+          </div>
         </div>
       </div>
     </div>

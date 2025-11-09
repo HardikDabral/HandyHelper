@@ -1,5 +1,6 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
+import Link from 'next/link'
 import { 
   Image as ImageIcon, 
   ImagePlus, 
@@ -456,6 +457,25 @@ export default function MemeGenerator() {
                 <li>Use contrasting colors for better readability</li>
               </ul>
             </div>
+          </div>
+        </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
+          <h2 className="text-xl font-bold text-[#0B2E33] mb-4">Related Tools</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/image-resizer" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Image Resizer
+            </Link>
+            <Link href="/color-picker" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Color Picker
+            </Link>
+            <Link href="/qr-generator" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → QR Generator
+            </Link>
+            <Link href="/" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → View All Tools
+            </Link>
           </div>
         </div>
       </div>
