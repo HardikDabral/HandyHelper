@@ -255,7 +255,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-[#0B2E33]">
-              Handy Helper Tools
+              Free Online Calculators & Tools - Handy Helper
             </h1>
             <p className="text-sm md:text-base text-[#0B2E33]/90">A collection of useful tools to help you with everyday tasks.</p>
           </div>

@@ -74,7 +74,7 @@ export default function RandomNamePicker() {
             <Shuffle className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">Random Name Picker</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free Random Name Picker - Pick Random Names Online</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Pick random names from your list</p>
           </div>
         </div>

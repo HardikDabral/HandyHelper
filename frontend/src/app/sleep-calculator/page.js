@@ -60,7 +60,7 @@ export default function SleepCalculator() {
             <Moon className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">Sleep Calculator</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free Sleep Calculator - Calculate Optimal Sleep Schedule</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Calculate optimal sleep and wake times</p>
           </div>
         </div>

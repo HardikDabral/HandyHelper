@@ -58,7 +58,7 @@ export default function WifiSpeedTest() {
             <Wifi className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">WiFi Speed Test</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free WiFi Speed Test - Test Internet Speed Online</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Test your internet connection speed</p>
           </div>
         </div>

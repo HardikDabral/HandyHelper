@@ -125,7 +125,7 @@ export default function ExpenseSplitter() {
             <Split className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">Expense Splitter</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free Expense Splitter - Split Bills Online</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Split expenses fairly among friends</p>
           </div>
         </div>

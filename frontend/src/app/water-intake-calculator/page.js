@@ -48,7 +48,7 @@ export default function WaterIntakeCalculator() {
             <Droplets className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">Water Intake Calculator</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free Water Intake Calculator - Calculate Daily Water Needs</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Calculate your daily water needs</p>
           </div>
         </div>

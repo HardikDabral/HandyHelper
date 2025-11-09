@@ -53,7 +53,7 @@ export default function QRGenerator() {
             <QrCode className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">QR Code Generator</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free QR Code Generator - Create QR Codes Online</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Generate QR codes for links or text</p>
           </div>
         </div>

@@ -224,7 +224,7 @@ export default function MemeGenerator() {
             <ImagePlus className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">Meme Generator</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free Meme Generator - Create Memes Online</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Create dank memes in seconds</p>
           </div>
         </div>

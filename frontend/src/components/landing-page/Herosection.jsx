@@ -44,8 +44,8 @@ const Herosection = () => {
           <div className="text-white max-w-4xl">
   
             <h1 className="text-5xl lg:text-7xl font-medium leading-tight mb-8">
-              <span className="block">Simplify,</span>
-              <span className="block">Supercharge.</span>
+              <span className="block">Free Online Calculators</span>
+              <span className="block">& Tools - Handy Helper</span>
             </h1>
 
             <div className="space-y-6">

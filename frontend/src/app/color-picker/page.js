@@ -53,7 +53,7 @@ export default function ColorPicker() {
             <Palette className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">Color Picker</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free Color Picker - Pick Colors from Images Online</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Pick and convert colors between formats</p>
           </div>
         </div>

@@ -43,7 +43,7 @@ export default function GSTCalculator() {
             <Receipt className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">GST Calculator</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free GST Calculator - Calculate GST Online</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">
               Calculate GST amounts for both inclusive and exclusive prices
             </p>

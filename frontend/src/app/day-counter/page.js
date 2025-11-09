@@ -46,7 +46,7 @@ export default function DayCounter() {
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-3 sm:mr-4 animate-bounce">
             <Calculator className="w-5 h-5 sm:w-6 sm:h-6" />
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold text-[#0B2E33]">Day Counter</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-[#0B2E33]">Free Day Counter - Count Days Between Dates</h1>
         </div>
 
         <div className="bg-white/70 sm:bg-white/50 backdrop-blur-md sm:backdrop-blur-xl rounded-xl p-5 sm:p-6 shadow-lg border border-[#93B1B5]/50">

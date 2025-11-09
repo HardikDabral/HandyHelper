@@ -70,7 +70,7 @@ export default function About() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.6 }}
                     >
-                        About Tools Calculator
+                        About Handy Helper - Free Online Calculators & Tools
                     </motion.h1>
 
                     <motion.div

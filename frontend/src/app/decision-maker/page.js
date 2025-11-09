@@ -88,7 +88,7 @@ export default function DecisionMaker() {
             <Dices className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">Decision Maker</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free Decision Maker - Coin Flip & Random Choice Tool</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Flip a coin or pick a random choice</p>
           </div>
         </div>
@@ -213,6 +213,25 @@ export default function DecisionMaker() {
             </div>
           </div>
         </div>
+
+        {/* Related Tools Section */}
+        <div className="mt-8 bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
+          <h2 className="text-xl font-bold text-[#0B2E33] mb-4">Related Tools</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/random-name-picker" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Random Name Picker
+            </Link>
+            <Link href="/percentage-calculator" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Percentage Calculator
+            </Link>
+            <Link href="/word-counter" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → Word Counter
+            </Link>
+            <Link href="/" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
+              → View All Tools
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Add custom animations */}
@@ -232,25 +251,6 @@ export default function DecisionMaker() {
           animation: fade-in 0.3s ease-out forwards;
         }
       `}</style>
-
-      {/* Related Tools Section */}
-      <div className="mt-8 bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
-        <h2 className="text-xl font-bold text-[#0B2E33] mb-4">Related Tools</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <Link href="/random-name-picker" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
-            → Random Name Picker
-          </Link>
-          <Link href="/percentage-calculator" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
-            → Percentage Calculator
-          </Link>
-          <Link href="/word-counter" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
-            → Word Counter
-          </Link>
-          <Link href="/" className="text-[#0B2E33] hover:text-[#4F7C82] transition-colors text-sm">
-            → View All Tools
-          </Link>
-        </div>
-      </div>
     </div>
   )
 }

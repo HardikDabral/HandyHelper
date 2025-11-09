@@ -37,7 +37,7 @@ export default function DiscountCalculator() {
             <Calculator className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">Discount Calculator</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free Discount Calculator - Calculate Discounts Online</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Calculate final price after discounts</p>
           </div>
         </div>

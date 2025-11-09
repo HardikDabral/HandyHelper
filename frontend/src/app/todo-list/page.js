@@ -54,7 +54,7 @@ export default function TodoList() {
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-4 animate-bounce">
             <ClipboardList className="w-6 h-6" />
           </div>
-          <h1 className="text-2xl font-bold text-[#0B2E33]">To-Do List</h1>
+          <h1 className="text-2xl font-bold text-[#0B2E33]">Free Todo List - Task Manager Online</h1>
         </div>
 
         <div className="bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40 -ml-4">

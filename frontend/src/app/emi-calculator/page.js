@@ -79,7 +79,7 @@ export default function EMICalculator() {
             <DollarSign className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">EMI Calculator</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free EMI Calculator - Calculate Loan EMI Online</h1>
             <p className="text-sm text-[#0B2E33]/80">Calculate your monthly loan payments</p>
           </div>
         </div>

@@ -111,7 +111,7 @@ export default function GPACalculator() {
             <GraduationCap className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[#0B2E33]">Grade Calculator</h1>
+            <h1 className="text-2xl font-bold text-[#0B2E33]">Free GPA Calculator - Calculate GPA & Grades Online</h1>
             <p className="text-sm text-[#0B2E33]/70 mt-1">Calculate your academic performance</p>
           </div>
         </div>

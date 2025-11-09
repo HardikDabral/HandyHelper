@@ -47,7 +47,7 @@ export default function InterestCalculator() {
           <div className="p-3 rounded-lg bg-[#0B2E33] text-white mr-4 animate-bounce">
             <RefreshCcw className="w-6 h-6" />
           </div>
-          <h1 className="text-2xl font-bold text-[#0B2E33]">Interest Calculator</h1>
+          <h1 className="text-2xl font-bold text-[#0B2E33]">Free Interest Calculator - Calculate Interest Online</h1>
         </div>
         
         <div className="bg-white/50 backdrop-blur-xl rounded-xl p-6 shadow-md border border-[#93B1B5]/40">
