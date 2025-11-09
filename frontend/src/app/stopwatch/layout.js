@@ -5,6 +5,20 @@ export const metadata = {
 }
 
 export default function StopwatchLayout({ children }) {
-  return <>{children}</>
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Stopwatch",
+    "description": "Free online stopwatch timer",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      {children}
+    </>
+  )
 }
 

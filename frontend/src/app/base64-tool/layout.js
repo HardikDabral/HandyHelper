@@ -5,6 +5,20 @@ export const metadata = {
 }
 
 export default function Base64Layout({ children }) {
-  return <>{children}</>
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Base64 Encoder/Decoder",
+    "description": "Free Base64 encoder and decoder tool",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      {children}
+    </>
+  )
 }
 

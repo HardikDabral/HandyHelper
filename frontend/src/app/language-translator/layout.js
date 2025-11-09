@@ -5,6 +5,20 @@ export const metadata = {
 }
 
 export default function TranslatorLayout({ children }) {
-  return <>{children}</>
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Language Translator",
+    "description": "Free online language translator supporting 100+ languages",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      {children}
+    </>
+  )
 }
 

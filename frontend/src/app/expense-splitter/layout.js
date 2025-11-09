@@ -5,6 +5,20 @@ export const metadata = {
 }
 
 export default function ExpenseLayout({ children }) {
-  return <>{children}</>
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Expense Splitter",
+    "description": "Free bill and expense splitter calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      {children}
+    </>
+  )
 }
 

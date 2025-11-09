@@ -5,6 +5,20 @@ export const metadata = {
 }
 
 export default function WiFiLayout({ children }) {
-  return <>{children}</>
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "WiFi Speed Test",
+    "description": "Free internet speed test tool",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      {children}
+    </>
+  )
 }
 

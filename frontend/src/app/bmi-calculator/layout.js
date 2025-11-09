@@ -5,6 +5,34 @@ export const metadata = {
 }
 
 export default function BMILayout({ children }) {
-  return <>{children}</>
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BMI Calculator",
+    "description": "Free Body Mass Index calculator supporting metric and imperial units",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Metric BMI calculation",
+      "Imperial BMI calculation",
+      "Weight category classification",
+      "Healthy weight range recommendations"
+    ]
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      {children}
+    </>
+  )
 }
 

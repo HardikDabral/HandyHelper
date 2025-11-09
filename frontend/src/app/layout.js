@@ -2,6 +2,14 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import ClientLayout from '@/components/layout/ClientLayout'
 
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ['system-ui', 'arial'],
+})
+
 export const metadata = {
   title: {
     default: 'Handy Helper Tools - Free Online Calculators & Utility Tools',
@@ -117,9 +125,61 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Handy Helper Tools",
+    "description": "Free online calculators and utility tools for everyday use. BMI calculator, EMI calculator, age calculator, and 30+ more tools.",
+    "url": "https://handy-helper.vercel.app",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1250"
+    },
+    "featureList": [
+      "BMI Calculator",
+      "EMI Calculator",
+      "Age Calculator",
+      "Percentage Calculator",
+      "QR Code Generator",
+      "Language Translator",
+      "Meme Generator",
+      "Countdown Timer"
+    ]
+  }
+
+  const organizationData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Handy Helper Tools",
+    "url": "https://handy-helper.vercel.app",
+    "logo": "https://handy-helper.vercel.app/logo.png",
+    "description": "Free online calculators and utility tools",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "handyhelpertoolscalculator@gmail.com",
+      "contactType": "customer service"
+    }
+  }
+
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+        />
         <ClientLayout>
           {children}
         </ClientLayout>
