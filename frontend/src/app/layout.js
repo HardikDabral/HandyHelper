@@ -15,7 +15,7 @@ export const metadata = {
     default: 'Handy Helper Tools - Free Online Calculators & Utility Tools',
     template: '%s | Handy Helper Tools'
   },
-  description: 'Free online calculators: BMI, EMI, age, percentage, loan & more. Accurate, reliable utility tools for everyday calculations. Fast and completely free.',
+  description: 'Free online calculators: BMI, EMI, age, percentage & more. Accurate, reliable utility tools. Fast and completely free.',
   keywords: 'handy helper tools, online calculator, free tools, BMI calculator, EMI calculator, age calculator, percentage calculator, utility tools, web calculator, math tools, financial calculator, unit converter, online tools, free calculator',
   authors: [{ name: 'Handy Helper Tools Team' }],
   creator: 'Handy Helper Tools',
@@ -48,7 +48,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Handy Helper Tools - Free Online Calculators & Utility Tools',
-    description: 'Free online calculators: BMI, EMI, age, percentage, loan & more. Accurate, reliable utility tools for everyday calculations. Fast and completely free.',
+    description: 'Free online calculators: BMI, EMI, age, percentage & more. Accurate, reliable utility tools. Fast and completely free.',
     images: ['/og-image.jpg'],
     creator: '@handyhelpertools',
     site: '@handyhelpertools',
