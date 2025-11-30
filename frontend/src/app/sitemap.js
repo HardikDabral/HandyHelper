@@ -10,6 +10,8 @@ export default function sitemap() {
     { route: '', priority: 1.0, changeFrequency: 'daily' },
     { route: '/landing-page', priority: 1.0, changeFrequency: 'daily' },
     { route: '/about', priority: 0.9, changeFrequency: 'monthly' },
+    { route: '/terms', priority: 0.7, changeFrequency: 'monthly' },
+    { route: '/privacy', priority: 0.7, changeFrequency: 'monthly' },
   ]
   
   // Calculator pages - high priority
