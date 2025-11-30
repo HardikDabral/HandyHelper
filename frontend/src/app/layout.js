@@ -25,7 +25,7 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://handy-helper.vercel.app/' : 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://handy-helper.vercel.app' : 'http://localhost:3000'),
   alternates: {
     canonical: '/',
   },
@@ -115,7 +115,7 @@ export default function RootLayout({ children }) {
     "@type": "WebApplication",
     "name": "Handy Helper Tools",
     "description": "Free online calculators and utility tools for everyday use. BMI calculator, EMI calculator, age calculator, and 30+ more tools.",
-    "url": "https://handy-helper.vercel.app",
+    "url": process.env.NODE_ENV === 'production' ? "https://handy-helper.vercel.app" : "http://localhost:3000",
     "applicationCategory": "UtilityApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -137,20 +137,44 @@ export default function RootLayout({ children }) {
       "Language Translator",
       "Meme Generator",
       "Countdown Timer"
-    ]
+    ],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": process.env.NODE_ENV === 'production' ? "https://handy-helper.vercel.app/?search={search_term_string}" : "http://localhost:3000/?search={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   }
 
   const organizationData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Handy Helper Tools",
-    "url": "https://handy-helper.vercel.app",
-    "logo": "https://handy-helper.vercel.app/logo.png",
+    "url": process.env.NODE_ENV === 'production' ? "https://handy-helper.vercel.app" : "http://localhost:3000",
+    "logo": process.env.NODE_ENV === 'production' ? "https://handy-helper.vercel.app/logo.png" : "http://localhost:3000/logo.png",
     "description": "Free online calculators and utility tools",
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "handyhelpertoolscalculator@gmail.com",
       "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://twitter.com/handyhelpertools",
+      "https://facebook.com/handyhelpertools"
+    ]
+  }
+
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Handy Helper Tools",
+    "url": process.env.NODE_ENV === 'production' ? "https://handy-helper.vercel.app" : "http://localhost:3000",
+    "description": "Free online calculators and utility tools",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Handy Helper Tools"
     }
   }
 
@@ -164,6 +188,10 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
         />
         <ClientLayout>
           {children}
