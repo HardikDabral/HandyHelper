@@ -4,7 +4,7 @@ export default function PrivacyPage() {
   return (
     <>
       <h1 className="sr-only">Privacy Policy - Handy Helper Tools</h1>
-      <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82]">
+      <div className="min-h-screen ">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="bg-white/50 backdrop-blur-xl rounded-xl p-8 shadow-md border border-[#93B1B5]/40">
             <h1 className="text-3xl md:text-4xl font-bold text-[#0B2E33] mb-6">

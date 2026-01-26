@@ -44,33 +44,6 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-
-        {/* <div className="flex items-center gap-3">
-          {user ? (
-            <div className="flex items-center gap-2 md:gap-3">
-              <div className="hidden md:flex items-center gap-1.5 text-[#0B2E33]">
-                <span className="text-sm font-medium">
-                  Welcome, {user.name}
-                </span>
-              </div>
-              <button
-                onClick={handleLogout}
-                className="px-2.5 md:px-4 py-2 md:py-2.5 rounded-lg bg-[#0B2E33] hover:bg-[#4F7C82] text-white transition-all duration-300 flex items-center gap-1.5 md:gap-2"
-              >
-                <LogOut className="w-4 h-4 md:w-5 md:h-5" />
-                <span className="text-sm md:text-base">Logout</span>
-              </button>
-            </div>
-          ) : (
-            <Link
-              href="/login"
-              className="px-2.5 md:px-4 py-2 md:py-2.5 rounded-lg bg-[#0B2E33] hover:bg-[#4F7C82] text-white transition-all duration-300 flex items-center gap-1.5 md:gap-2"
-            >
-              <LogIn className="w-4 h-4 md:w-5 md:h-5" />
-              <span className="text-sm md:text-base">Login</span>
-            </Link>
-          )}
-        </div> */}
       </div>
     </nav>
   )

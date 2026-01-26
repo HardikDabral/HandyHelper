@@ -42,7 +42,7 @@ export default function AuthPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] md:pl-64">
+    <div className="min-h-screen  md:pl-64">
       <div className="max-w-2xl mx-auto p-6 pt-16 lg:ml-[-20px]">
         <div className="bg-white/50 backdrop-blur-xl rounded-xl p-8 shadow-md border border-[#93B1B5]/40">
           <h1 className="text-3xl font-bold text-[#0B2E33] mb-6 text-center">

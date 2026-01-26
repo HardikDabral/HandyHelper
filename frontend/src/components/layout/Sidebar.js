@@ -51,7 +51,7 @@ export default function Sidebar() {
   }
 
   return (
-    <div className="hidden md:block w-64 h-[calc(100vh-4rem)] fixed left-0 top-16 bg-gradient-to-b from-[#B8E3E9]/90 to-[#93B1B5]/90 backdrop-blur-xl border-r border-[#93B1B5]/20">
+    <div className="hidden md:block w-64 h-[calc(100vh-4rem)] fixed left-0 top-16 backdrop-blur-xl border-r border-[#93B1B5]/20">
       <nav className="p-6 h-full flex flex-col">
         <div className="flex-1 overflow-y-auto scrollbar-hide">
           {Object.entries(categories).map(([category, tools]) => (

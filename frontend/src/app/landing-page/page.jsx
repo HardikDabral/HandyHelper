@@ -1,9 +1,11 @@
 import React from 'react'
 import Herosection from '@/components/landing-page/Herosection'
-import FloatingNavbar from '@/components/landing-page/FloatingNavbar'
-import  AboutUs from "@/components/landing-page/AboutUs"
-import WhyChoose from '@/components/landing-page/WhyChoose'
-import WhatWeOffer from '@/components/landing-page/WhatWeOffer'
+import About from '@/components/landing-page/About'
+import CoolSection from '@/components/landing-page/CoolSection'
+import WhyUs from '@/components/landing-page/WhyUs'
+import Cool2 from '@/components/landing-page/cool2'
+import Faq from '@/components/landing-page/Faq'
+import Navbar from '@/components/landing-page/Navbar'
 
 export const metadata = {
   title: 'Free Online Calculators & Tools - Handy Helper',
@@ -35,11 +37,13 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-      <FloatingNavbar />
+      <Navbar />
       <Herosection />
-      <AboutUs />
-      <WhyChoose />
-      <WhatWeOffer />
+      <About />
+      <CoolSection />
+      <WhyUs />
+      <Cool2 />
+      <Faq />
     </div>
   )
 }

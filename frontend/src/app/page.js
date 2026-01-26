@@ -251,7 +251,7 @@ export default function Home() {
           })
         }}
       />
-      <div className="max-w-7xl mx-auto px-4 pt-14 md:pt-18 pb-8 bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82] min-h-[calc(100vh-4rem)]">
+      <div className="max-w-7xl mx-auto px-4 pt-14 md:pt-18 pb-8  min-h-[calc(100vh-4rem)]">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-[#0B2E33]">

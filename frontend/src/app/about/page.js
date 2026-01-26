@@ -55,7 +55,7 @@ export default function About() {
     }
 
     return (
-        <main className="min-h-[calc(100vh-4rem)] bg-gradient-to-br from-[#B8E3E9] via-[#93B1B5] to-[#4F7C82]">
+        <main className="min-h-[calc(100vh-4rem)]">
             <div className="container mx-auto px-4 py-12 md:py-16">
                 {/* About Section */}
                 <motion.div
